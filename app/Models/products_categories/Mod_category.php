@@ -11,6 +11,11 @@ class Mod_category extends Model
         'category_name', 'category_description', '	category_status',
     ];
 
+
+    public function subcategories(){
+    	return $this->hasMany('App\mymodels\Mod_Subcategory', 'parent_category', 'id');
+    }
+
 }
      
 

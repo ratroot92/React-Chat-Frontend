@@ -35,7 +35,9 @@ Route::get('/getlistoforders/{id}', 'api\Api_Controller2@getlistoforders');
 Route::post('/checkout', 'api\Api_Controller@checkout');
 Route::post('/reorder', 'api\Api_Controller2@reorder');
 Route::get('orderdetails/{id}','api\Api_Controller2@orderdetails');
-Route::post('forgot','api\Api_Controller2@orderdetails');
+Route::post('forgot','api\Api_Controller2@forgotpassword');
+Route::get('/allcategories','api\Api_Controller2@allcategories');
+Route::get('/get_subcategory/{id}','api\Api_Controller2@get_subcategory');
 //saad api start here 
 Route::get('/allorders', 'api\Api_Controller2@allOrders');
 

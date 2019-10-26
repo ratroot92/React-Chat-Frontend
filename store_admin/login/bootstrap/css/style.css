@@ -1,0 +1,42 @@
+
+.bg-grey{
+background-color: grey;
+
+}
+
+.bg-white{
+	background-color: white;
+	width: 30% !important;
+
+
+}
+.widft{
+	width: 35%;
+	float: left;
+	color: white !important
+
+}
+.wid{
+	width: 100%;
+	color: white !important
+	    border-radius: 101px !important;
+}
+.bg-fbutton{
+	background-color: #000099 !important
+}
+.bg-tbutton{
+	background-color: #0099ff !important
+}
+.text-allign{
+	float: right;
+;
+}
+.ta-center{
+	text-align: center;
+
+}
+.b-color{
+	background-color:#ff66ff;}
+	.mar-top{
+		margin-top: 130px !important
+	}

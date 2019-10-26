@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\shopping_cart\Mod_Shoppingcart;
 use App\Models\user_orders\Mod_orders;
 use App\mymodels\reorder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgotPasswordEmail;
+use App\Models\products_categories\Mod_category;
 use App\User;
 use Validator;
 use DB;
@@ -401,4 +405,81 @@ return response()->json(['message'=>'no orders_against this user_id ','status'=>
 }
 
 }
+
+
+public function forgotpassword(Request $request){
+
+$get_email=$request->input('email');
+$user_id=$request->input('user_id');
+
+$get_user=DB::table('users')
+->where('id',$user_id)
+->first();
+if($get_user){
+$genrated_password = Hash::make(str_random(8));
+
+$get_user=DB::table('users')
+->where('id',$user_id)
+->update(['password'=>$genrated_password]);
+
+if($get_user){
+$get_user=DB::table('users')
+->where('id',$user_id)
+->first();
+
+    $name =$get_user->fname;
+    $password=$get_user->password;
+    $email=$get_email;
+   Mail::to($email)->send(new ForgotPasswordEmail($name,$password));
+   
+   return response()->json(['message'=>'password changed email sent','user'=>$get_user,'status'=>'200']);
+}  
+else{
+return response()->json(['message'=>'failed']);
+}
+}
+
+else{
+  return response()->json(['message'=>'failed']);
+}
+
+
+
+
+
+
+// end of forgot password 
+
+
+}
+
+public function allcategories(){
+
+$all=Mod_category::all();
+if($all){
+  return response()->json(['message'=>'success ','status'=>'200','categories_list'=>$all]);
+}
+else{
+  return response()->json(['message'=>'operation failed ','status'=>'401']);
+}
+}
+
+public function get_subcategory($id){
+$category=DB::table('categories')
+->where('id',$id)
+->first();
+
+$all=$category=DB::table('subcategories')
+->where('parent_category',$id)
+->get();
+
+
+if($all ){
+  return response()->json(['message'=>'success ','status'=>'200','parent _category'=>$category,'child_categories'=>$all]);
+}
+else{
+  return response()->json(['message'=>'operation failed ','status'=>'401']);
+}
+}
+
 }

@@ -21,15 +21,41 @@ Route::post('/admin/logout','Admin_auth\LoginController@logout')->name('logout')
 Route::group(['middleware' =>['admin'],'prefix' => 'admin'],function (){
     Route::get('/dashboard','Admin_Panne\main\admin_main_Controller@main_index');
   // Stores
-    Route::get('/stores','Admin_Panne\main\admin_main_Controller@store_index');
+
+
+    //ahmad route
     Route::get('/add_store','Admin_Panne\main\admin_main_Controller@add_store');
-    // drivers
+    Route::post('/addCategories','Admin_Panne\main\admin_main_Controller@addcategory');
+    Route::post('/edit_cat_modal','Admin_Panne\main\admin_main_Controller@edit_cat');
+    Route::get('/del_cat/{id}','Admin_Panne\main\admin_main_Controller@del_cat');
+    Route::get('/get_cat_for_edit/{id}','Admin_Panne\main\admin_main_Controller@get_cat_for_edit');
+     
+Route::get('/sub_category','ahmedControllers\adminControllers\subCategoryController@view');
+Route::get('/subcategories','ahmedControllers\adminControllers\subCategoryController@index');
+Route::get('/get_sub_cat_for_edit/{id}','ahmedControllers\adminControllers\subCategoryController@get_sub_cat_for_edit');
+Route::post('/edit_subcategory','ahmedControllers\adminControllers\subCategoryController@edit_subcategory');
+Route::get('/del_sub_cat/{id}','ahmedControllers\adminControllers\subCategoryController@del_sub_cat');  
+     
+Route::post('/addSubCategories','ahmedControllers\adminControllers\subCategoryController@addSubCategories');
+
+
+
+
+
+
+    Route::get('/stores','Admin_Panne\main\admin_main_Controller@store_index');
+  
     Route::get('/drivers','Admin_Panne\main\admin_main_Controller@drivers');
     Route::get('/add_driver','Admin_Panne\main\admin_main_Controller@add_driver');
     Route::get('/driver_schedule','Admin_Panne\main\admin_main_Controller@driver_schedule');
     //Products
+
     Route::get('/products','Admin_Panne\main\admin_main_Controller@products');
     Route::get('/add_product','Admin_Panne\main\admin_main_Controller@add_product');
+    Route::post('/insert_product ','Admin_Panne\main\admin_main_Controller@insert_product');
+    Route::post('/edit_product ','Admin_Panne\main\admin_main_Controller@edit_product');
+    Route::get('/get_pro_for_edit/{id}','Admin_Panne\main\admin_main_Controller@get_pro_for_edit');
+    Route::get('/del_pro/{id}','Admin_Panne\main\admin_main_Controller@del_pro');
 
     //Orders
     Route::get('/orders','Admin_Panne\main\admin_main_Controller@orders');
@@ -43,6 +69,8 @@ Route::group(['middleware' =>['admin'],'prefix' => 'admin'],function (){
     Route::get('/view_order/{id}','Admin_Panne\main\admin_main_Controller@view_order');
     Route::get('/deposit_amount/{id}','Admin_Panne\main\admin_main_Controller@deposit_amount');
     Route::post('/update_amount/{id}','Admin_Panne\main\admin_main_Controller@update_amount');
+
+
 
 
 
@@ -145,16 +173,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //ahmad routes
-//my routes for categories 
-Route::get('/categories','mycontrollers\categorycontroller@index')->name('categories');
-Route::get('/rendercategorytable','mycontrollers\categorycontroller@rendercategorytable')->name('rendercategorytable');
-//insert category data 
-Route::post('insertcategory','mycontrollers\categorycontroller@insert')->name('insertcategory');
-Route::get('getcategioryinfo/{id}','mycontrollers\categorycontroller@getcatagoryinfo')->name('getcategioryinfo');
-Route::post('/editcategory','mycontrollers\categorycontroller@edit')->name('editcategory');
-Route::get('/deletecategory/{id}','mycontrollers\categorycontroller@delete')->name('deletecategory');
+//ahmed
+   
+Route::group(['prefix' => 'admin'], function () {
+  
+});
+// //my routes for categories 
+// Route::get('/categories','mycontrollers\categorycontroller@index')->name('categories');
+// Route::get('/rendercategorytable','mycontrollers\categorycontroller@rendercategorytable')->name('rendercategorytable');
+// //insert category data 
+// Route::post('insertcategory','mycontrollers\categorycontroller@insert')->name('insertcategory');
+// Route::get('getcategioryinfo/{id}','mycontrollers\categorycontroller@getcatagoryinfo')->name('getcategioryinfo');
+// Route::post('/editcategory','mycontrollers\categorycontroller@edit')->name('editcategory');
+// Route::get('/deletecategory/{id}','mycontrollers\categorycontroller@delete')->name('deletecategory');
 
-//my routes for products
-Route::get('/products','mycontrollers\productcontroller@index')->name('prdoucts');
-Route::post('/insertproduct','mycontrollers\productcontroller@insert')->name('insertproduct');
-Route::get('/renderproducttable','mycontrollers\productcontroller@renderproducttable')->name('renderproducttable');
+// //my routes for products
+// Route::get('/products','mycontrollers\productcontroller@index')->name('prdoucts');
+// Route::post('/insertproduct','mycontrollers\productcontroller@insert')->name('insertproduct');
+// Route::get('/renderproducttable','mycontrollers\productcontroller@renderproducttable')->name('renderproducttable');
+
+
+
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    return "Cache is cleared";
+});
