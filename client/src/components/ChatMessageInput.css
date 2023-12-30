@@ -1,0 +1,50 @@
+.typing-input-container {
+    position: relative;
+  }
+
+  .typing::before {
+    content: "Typing...";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888888;
+    font-size: 12px;
+    font-style: italic;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  .typing-indicator {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #888888;
+    border-radius: 50%;
+    animation: typing-indicator 0.75s infinite;
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      color: transparent;
+    }
+    50% {
+      color: #888888;
+    }
+  }
+
+  @keyframes typing-indicator {
+    0%,
+    50%,
+    100% {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+    25%,
+    75% {
+      opacity: 0.5;
+    }
+  }

@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "65347003981788130d3587b7",
+    "fileKey": "application/Upload_20231022004106783_te03c5.pdf",
+    "encoding": "7bit",
+    "mimetype": "application/pdf",
+    "s3PrivateUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/application/Upload_20231022004106783_te03c5.pdf",
+    "s3PublicUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/application/Upload_20231022004106783_te03c5.pdf?AWSAccessKeyId=AKIASJKZ637JDZSGPOFO&Expires=1697935663&Signature=yxbtGDMhoI6ZPiVYT5%2FbZYB5zQI%3D",
+    "size": 888724,
+    "bucketName": "ish-dev-s3-bucket",
+    "createdAt": "2023-10-22T00:41:05.234Z",
+    "updatedAt": "2023-10-22T00:41:05.234Z",
+    "__v": 0
+  },
+  {
+    "_id": "6536ad62f2a973d2ac19742b",
+    "fileKey": "image/Upload_20231023172903822_an8bav.png",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "s3PrivateUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/Upload_20231023172903822_an8bav.png",
+    "s3PublicUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/Upload_20231023172903822_an8bav.png?AWSAccessKeyId=AKIASJKZ637JDZSGPOFO&Expires=1698082646&Signature=lnov8AmnptsSWjdEMuTrxZXqcaU%3D",
+    "size": 65619,
+    "bucketName": "ish-dev-s3-bucket",
+    "createdAt": "2023-10-23T17:28:54.516Z",
+    "updatedAt": "2023-10-23T17:28:54.516Z",
+    "__v": 0
+  },
+  {
+    "_id": "6536ad8e416d46771d9d6f47",
+    "fileKey": "image/Upload_20231023172948730_3lh2in.png",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "s3PrivateUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/Upload_20231023172948730_3lh2in.png",
+    "s3PublicUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/Upload_20231023172948730_3lh2in.png?AWSAccessKeyId=AKIASJKZ637JDZSGPOFO&Expires=1698082490&Signature=rGni%2BT%2ByVqLt%2FX5SpmWziXe23jo%3D",
+    "size": 65619,
+    "bucketName": "ish-dev-s3-bucket",
+    "createdAt": "2023-10-23T17:29:45.128Z",
+    "updatedAt": "2023-10-23T17:29:45.128Z",
+    "__v": 0
+  },
+  {
+    "_id": "6536af514ec6f20598e776d5",
+    "fileKey": "image/upload_20231023173717493_ledtj8.png",
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "s3PrivateUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/upload_20231023173717493_ledtj8.png",
+    "s3PublicUrl": "https://ish-dev-s3-bucket.s3.amazonaws.com/image/upload_20231023173717493_ledtj8.png?AWSAccessKeyId=AKIASJKZ637JDZSGPOFO&Expires=1698082941&Signature=RVCW42UR9RR5FT8x0oM8qqhELRc%3D",
+    "size": 65619,
+    "bucketName": "ish-dev-s3-bucket",
+    "createdAt": "2023-10-23T17:37:03.153Z",
+    "updatedAt": "2023-10-23T17:37:03.153Z",
+    "__v": 0
+  }
+]

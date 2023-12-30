@@ -1,0 +1,12 @@
+Delete Group
+1- Only group owner can delete the group. [DONE]
+2- All Post , Comments , should be deleted.
+3-
+
+
+Update Group
+1- Only group owner can update the group.
+
+
+Dis / Approve Post
+ create a check that if group owner tries to approve only he can [pending]
